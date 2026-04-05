@@ -1,0 +1,77 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .split-layout, .split-layout.reverse { flex-direction: column; text-align: center; }
+    .split-layout .img-wrapper { width: 100%; }
+    
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .hero { min-height: 80vh; flex-direction: column; justify-content: center; text-align: center; }
+    .hero-image { 
+    position: absolute; 
+    right: 0; 
+    top: 0; 
+    width: 50%; 
+    height: 100%; 
+    border-radius: 4rem 0 0 4rem; /* Gros arrondi très élégant uniquement du côté gauche */
+    box-shadow: -15px 0 30px rgba(0, 0, 0, 0.3); /* Ombre qui donne du relief sur la partie noire */
+}
+    .hero-content { padding: 3rem 5%; }
+    .hero-buttons { justify-content: center; }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .accent-font { font-size: 2rem; }
+    .section-padding { padding: 4rem 0; }
+
+    .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+
+    .hero-buttons { flex-direction: column; }
+    
+    /* Mobile Menu */
+    .hamburger { display: flex; }
+    .nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px; height: 100vh; background-color: var(--color-dark); padding-top: 8rem; transition: var(--transition); box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
+    .nav-menu.active { right: 0; }
+    .nav-menu ul { flex-direction: column; align-items: center; gap: 2rem; }
+    .nav-menu a { color: var(--color-white) !important; font-size: 1.1rem; }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    
+    /* Ensure header background handles mobile menu visibility */
+    .header .logo { position: relative; z-index: 1002; }
+    .header .hamburger { position: relative; z-index: 1002; }
+}/* Tablets */
+@media (max-width: 992px) {
+    /* Garde tes autres règles existantes ici (comme .split-layout, .grid-3, etc.) */
+    
+    /* NOUVEAU CODE POUR L'EN-TÊTE (HERO) */
+    .hero { 
+        min-height: auto; 
+        flex-direction: column; 
+    }
+    .hero-image { 
+        position: relative; 
+        width: 100%; 
+        height: 50vh; 
+        order: -1; 
+        border-radius: 0 0 2rem 2rem; /* Bel arrondi en bas pour mobile */
+        box-shadow: none;
+    }
+    .hero-content { 
+        width: 100%; 
+        max-width: 100%; /* Force le texte à prendre toute la largeur sur mobile */
+        padding: 3rem 5% 5rem 5%; 
+        text-align: center; 
+    }
+    .hero-buttons { 
+        justify-content: center; 
+    }
+}

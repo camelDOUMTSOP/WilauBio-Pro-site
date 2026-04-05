@@ -1,0 +1,213 @@
+/* ==========================================================================
+   VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --color-dark: #333333;       /* Le gris foncé du nouveau site */
+    --color-darker: #1a1a1a;
+    --color-cream: #fffaf5;      /* Le fond beige très clair */
+    --color-gold: #F39200;       /* L'orange principal WiLAU */
+    --color-gold-hover: #e08600; 
+    --color-white: #ffffff;
+    --color-accent: #D4AF37;     /* Le vrai doré pour certains textes */
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    --transition: all 0.3s ease-in-out;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+h1, h2, h3, h4, .logo { 
+    font-family: var(--font-heading); 
+    font-weight: 700; 
+    text-transform: none; 
+    letter-spacing: normal; 
+}
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1.5rem; font-weight: 400; color: #4b5563; }
+
+.accent-font { 
+    font-family: var(--font-heading); 
+    font-size: 1.5rem; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    color: var(--color-gold);
+}
+
+.gold-text { color: var(--color-gold); }
+.text-light { color: var(--color-white); }
+.bg-dark { background-color: var(--color-dark); }
+.bg-cream { background-color: var(--color-cream); }
+.center { text-align: center; }
+
+.mt-1 { margin-top: 1rem; } .mt-2 { margin-top: 2rem; } .mt-3 { margin-top: 3rem; }
+.p-2 { padding: 2rem; } .p-3 { padding: 3rem; }
+.full-width { width: 100%; }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 6rem 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.split-layout { display: flex; align-items: center; gap: 4rem; }
+.split-layout > * { flex: 1; }
+.split-layout.reverse { flex-direction: row-reverse; }
+
+/* ==========================================================================
+   IMAGE HANDLING (MODERNISÉ : Bords arrondis et ombres)
+   ========================================================================== */
+.img-wrapper { 
+    position: relative; 
+    overflow: hidden; 
+    background-color: #f8fafc; 
+    border-radius: 1.5rem; /* Bords très arrondis */
+    box-shadow: var(--shadow-strong); /* Ombre douce et élégante */
+}
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.8s ease; }
+.img-wrapper:hover img { transform: scale(1.05); } /* Zoom au survol */
+
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-portrait { aspect-ratio: 4 / 5; }
+.aspect-landscape { aspect-ratio: 16 / 9; }
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-block; 
+    padding: 12px 32px; 
+    font-family: var(--font-body); 
+    font-weight: 600;
+    text-decoration: none; 
+    font-size: 1rem; 
+    transition: var(--transition);
+    cursor: pointer; 
+    border: none; 
+    text-align: center;
+    border-radius: 9999px; /* Boutons en forme de pilule */
+    box-shadow: var(--shadow-soft);
+}
+.btn.small { padding: 8px 24px; font-size: 0.9rem; }
+
+.btn-primary, .gold-btn { background-color: var(--color-gold); color: var(--color-white); }
+.btn-primary:hover, .gold-btn:hover { background-color: var(--color-gold-hover); transform: scale(1.05); box-shadow: var(--shadow-strong); }
+
+.btn-outline { border: 2px solid var(--color-dark); color: var(--color-dark); background: transparent; }
+.btn-outline:hover { background-color: var(--color-dark); color: var(--color-white); }
+.text-light .btn-outline { border-color: var(--color-white); color: var(--color-white); }
+.text-light .btn-outline:hover { background-color: var(--color-white); color: var(--color-dark); }
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition); background: transparent; }
+.header.scrolled { background-color: rgba(255, 255, 255, 0.95); padding: 1rem 0; box-shadow: var(--shadow-soft); backdrop-filter: blur(10px); }
+.header.scrolled .logo, .header.scrolled .nav-menu a { color: var(--color-dark); }
+body:not(.bg-cream) .header:not(.scrolled) .logo, body:not(.bg-cream) .header:not(.scrolled) .nav-menu a { color: var(--color-white); }
+.bg-cream .header:not(.scrolled) .logo, .bg-cream .header:not(.scrolled) .nav-menu a { color: var(--color-dark); }
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.nav-menu ul { list-style: none; display: flex; gap: 2rem; }
+.nav-menu a { text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); font-weight: 600; }
+.nav-menu a:hover, .nav-menu a.active { color: var(--color-gold) !important; }
+
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 1001; }
+.hamburger span { display: block; width: 25px; height: 2px; background-color: var(--color-gold); transition: var(--transition); }
+
+/* ==========================================================================
+   LOGO WiLAU BIO (Image + Texte)
+   ========================================================================== */
+.logo-wrapper { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-text { display: flex; flex-direction: column; justify-content: center; }
+.logo-title { font-family: var(--font-body); font-weight: 700; font-size: 1.125rem; line-height: 1; color: var(--color-gold); }
+.logo-subtitle { font-family: var(--font-body); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #6b7280; font-weight: 600; margin-top: 3px; }
+
+/* ==========================================================================
+   SECTIONS & CARDS (MODERNISÉES)
+   ========================================================================== */
+.hero, .page-banner { position: relative; display: flex; align-items: center; min-height: 100vh; background-color: var(--color-dark); overflow: hidden; }
+.page-banner { min-height: 50vh; justify-content: center; background-size: cover; background-position: center; }
+
+.hero-content { 
+    width: 50%; 
+    max-width: 50%; 
+    padding: 0 5%; 
+    z-index: 2; 
+}
+.hero-content h1, .hero-content p { color: var(--color-white); }
+.hero-buttons { display: flex; gap: 1rem; margin-top: 2rem; }
+.hero-image { position: absolute; right: 0; top: 0; width: 50%; height: 100%; border-radius: 0; }
+
+/* Style des cartes Produits et Blog */
+.product-card, .blog-card.full-shadow { 
+    background: var(--color-white); 
+    padding-bottom: 1.5rem; 
+    text-align: center; 
+    box-shadow: var(--shadow-soft); 
+    transition: var(--transition); 
+    border-radius: 1.5rem; /* Arrondis de la carte complète */
+    overflow: hidden; /* Empêche l'image de déborder */
+}
+.product-card:hover, .blog-card.full-shadow:hover { 
+    transform: translateY(-10px); 
+    box-shadow: var(--shadow-strong); 
+}
+/* Annule l'arrondi en bas de l'image pour qu'elle s'intègre parfaitement à la carte */
+.product-card .img-wrapper, .blog-card.full-shadow .img-wrapper { border-radius: 0; box-shadow: none; }
+.product-info { padding: 1.5rem 1.5rem 0; }
+
+/* Cartes des avis (Témoignages) */
+.testimonial-card { 
+    padding: 2.5rem; 
+    background: var(--color-white);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    position: relative; 
+    border: none;
+}
+.testimonial-card.with-img { padding: 0; border: none; background: transparent; box-shadow: none; }
+.quote-icon { font-size: 4rem; font-family: var(--font-heading); line-height: 0; position: absolute; top: 40px; left: 20px; opacity: 0.15; color: var(--color-gold); }
+.client-info h4 { margin-top: 1.5rem; font-size: 1rem; color: var(--color-gold); }
+.client-info span { font-size: 0.8rem; font-style: normal; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; }
+
+/* Cartes de valeurs (sur fond noir) */
+.value-card {
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+.value-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-10px); }
+
+/* Divers */
+.cta-section { background-image: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1920&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; background-position: center; }
+.footer { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   FORMULAIRE
+   ========================================================================== */
+.premium-form .form-group { margin-bottom: 1.5rem; text-align: left; }
+.premium-form label { display: block; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--color-dark); }
+.premium-form input, .premium-form select, .premium-form textarea { width: 100%; padding: 15px 20px; border: 1px solid #e5e7eb; border-radius: 1rem; background: #f9fafb; font-family: var(--font-body); transition: var(--transition); }
+.premium-form input:focus, .premium-form textarea:focus { border-color: var(--color-gold); box-shadow: 0 0 0 3px rgba(243, 146, 0, 0.2); outline: none; background: var(--color-white); }
