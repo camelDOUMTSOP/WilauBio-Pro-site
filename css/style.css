@@ -199,7 +199,22 @@ body:not(.bg-cream) .header:not(.scrolled) .logo, body:not(.bg-cream) .header:no
 .value-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-10px); }
 
 /* Divers */
-.cta-section { background-image: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1920&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; background-position: center; }
+.cta-section { 
+    /* 1. Ajoute le nom de ton image entre les guillemets ci-dessous */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("assets/images/wilau img 1.jpg"); 
+    
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-position: center;
+    padding: 100px 0; /* Ajoute un peu d'espace pour voir l'image */
+    color: #ffffff;   /* Force le texte en blanc */
+    text-align: center;
+}
+
+/* Force aussi le paragraphe qui était gris dans ta capture */
+.cta-section p {
+    color: #ffffff !important;
+}
 .footer { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
@@ -211,3 +226,109 @@ body:not(.bg-cream) .header:not(.scrolled) .logo, body:not(.bg-cream) .header:no
 .premium-form label { display: block; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--color-dark); }
 .premium-form input, .premium-form select, .premium-form textarea { width: 100%; padding: 15px 20px; border: 1px solid #e5e7eb; border-radius: 1rem; background: #f9fafb; font-family: var(--font-body); transition: var(--transition); }
 .premium-form input:focus, .premium-form textarea:focus { border-color: var(--color-gold); box-shadow: 0 0 0 3px rgba(243, 146, 0, 0.2); outline: none; background: var(--color-white); }
+/* ==========================================================================
+   BANNER - NOTRE HISTOIRE
+   ========================================================================== */
+.notre-histoire {
+    color: var(--color-white);
+}
+
+.notre-histoire h1 {
+    color: var(--color-white);
+}
+
+.notre-histoire p {
+    color: var(--color-white);
+}
+
+/* Style du bandeau */
+.page-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* Effet d'assombrissement supplémentaire si nécessaire */
+.page-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    z-index: 1;
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 2;
+}/* Grille pour le catalogue (4 colonnes sur desktop) */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+
+@media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+/* ==========================================================================
+   AJUSTEMENTS MOBILE (2 colonnes pour le catalogue)
+   ========================================================================== */
+@media (max-width: 500px) { 
+    /* On force 2 colonnes et on réduit l'espacement */
+    .grid-4 { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; 
+    } 
+    
+    /* On compacte l'intérieur de la carte pour que ça respire */
+    .product-info {
+        padding: 1rem 0.5rem 0; 
+    }
+    
+    .product-category {
+        font-size: 0.65rem;
+    }
+    
+    .product-info h3 {
+        font-size: 0.85rem; 
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
+    }
+    
+    /* On masque la description sur mobile pour aller droit au but (très courant en e-commerce) */
+    .product-info p {
+        display: none; 
+    }
+    
+    .product-price {
+        font-size: 0.95rem;
+        margin: 0.2rem 0 0.8rem;
+    }
+    
+    .btn.small {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Style des boutons de filtres */
+.filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-dark);
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active {
+    background: var(--color-gold);
+    color: var(--color-white);
+}
+
+/* Ajustement pour le prix sur les cartes */
+.product-price { font-size: 1.2rem; font-weight: 700; color: var(--color-gold); margin: 0.5rem 0 1rem; }
+.product-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; display: block; margin-bottom: 0.5rem; }
