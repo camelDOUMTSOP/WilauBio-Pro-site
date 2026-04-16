@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produits & Services | Wilau Bio</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -22,7 +23,7 @@
             <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="produit-services.html" class="active">Produits & Services</a></li>
+                    <li><a href="produits-services.html" class="active">Produits & Services</a></li>
                     <li><a href="a-propos-contact.html">À propos & Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -30,33 +31,59 @@
         </div>
     </header>
 
-    <section class="page-banner reveal" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/wilau img 5.jpg');">
+    <section class="page-banner reveal" style="background-color: var(--color-dark); min-height: 30vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px;">
         <div class="container center text-light">
-            <h1>Produits & Services</h1>
-            <p class="accent-font gold-text">L'Excellence pour votre Peau</p>
+            <h1 style="margin-bottom: 0.5rem;">Produits & Services</h1>
+            <p class="accent-font gold-text" style="font-size: 1.2rem;">L'Excellence pour votre Peau</p>
         </div>
     </section>
 
-    <section class="services-block bg-dark text-light section-padding reveal">
-        <div class="container split-layout">
-            <div class="text-content">
+    <section class="services-block bg-dark text-light section-padding reveal" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container center">
+            <div class="text-content" style="max-width: 800px; margin: 0 auto;">
                 <span class="accent-font gold-text">En Cabinet</span>
                 <h2>Nos Prestations Esthétiques</h2>
                 <p>Au-delà de nos produits, découvrez notre expertise en direct. Nous proposons des soins sur-mesure adaptés à vos besoins.</p>
-                <ul class="services-list mt-2">
-                    <li><strong>Soin du visage purifiant :</strong> Nettoyage en profondeur et hydratation.</li>
-                    <li><strong>Massage relaxant :</strong> Détente musculaire aux huiles essentielles.</li>
-                    <li><strong>Diagnostic de peau :</strong> Bilan complet pour déterminer votre routine idéale.</li>
+                
+                <ul class="services-list mt-3" style="list-style: none; text-align: left; display: flex; flex-direction: column; gap: 1.5rem; padding: 0;">
+                    
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12 2.1 14.9"/><path d="M12 12 21.9 9.1"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Soin du visage purifiant</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Nettoyage en profondeur, gommage et hydratation pour un teint lumineux.</p>
+                        </div>
+                    </li>
+
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="M2 14c0 2 2 3 5 3s5-1 5-3-2-3-5-3-5 1-5 3Z"/><path d="M12 14c0 2 2 3 5 3s5-1 5-3-2-3-5-3-5 1-5 3Z"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Massage relaxant</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Détente musculaire profonde aux huiles essentielles naturelles.</p>
+                        </div>
+                    </li>
+
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15h6"/><path d="M9 11h6"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Diagnostic de peau</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Bilan personnalisé complet pour déterminer votre routine cosmétique idéale.</p>
+                        </div>
+                    </li>
+
                 </ul>
-                <a href="https://wa.me/237697655431?text=Bonjour%20Wilau%20Bio,%20je%20souhaite%20r%C3%A9server%20un%20soin%20en%20cabinet." target="_blank" class="btn btn-primary gold-btn mt-2">Prendre Rendez-vous</a>
-            </div>
-            <div class="img-wrapper aspect-square">
-                <img src="assets/images/wilau timg.jpg" alt="Soins en cabinet">
+                <a href="https://wa.me/237697655431?text=Bonjour%20Wilau%20Bio,%20je%20souhaite%20r%C3%A9server%20un%20soin%20en%20cabinet." target="_blank" class="btn btn-primary gold-btn mt-3">Prendre Rendez-vous</a>
             </div>
         </div>
     </section>
 
-    <section class="products-catalog bg-cream section-padding reveal">
+    <section class="products-catalog bg-cream section-padding">
         <div class="container">
             <div class="section-header center">
                 <span class="accent-font gold-text">La Boutique</span>
@@ -72,8 +99,12 @@
                 <button class="filter-btn" data-filter="pack">Packs</button>
             </div>
 
-            <div class="grid-4 mt-3" id="products-grid">
-                </div>
+            <div class="grid-4 mt-3" id="products-grid"></div>
+            
+            <div class="center mt-3">
+                <button id="load-more-btn" class="btn btn-primary" style="display: none;">Voir plus de produits</button>
+            </div>
+            
         </div>
     </section>
 
@@ -85,5 +116,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-   </body>
+</body>
 </html>
