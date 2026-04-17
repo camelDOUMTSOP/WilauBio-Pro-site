@@ -332,3 +332,157 @@ body:not(.bg-cream) .header:not(.scrolled) .logo, body:not(.bg-cream) .header:no
 /* Ajustement pour le prix sur les cartes */
 .product-price { font-size: 1.2rem; font-weight: 700; color: var(--color-gold); margin: 0.5rem 0 1rem; }
 .product-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; display: block; margin-bottom: 0.5rem; }
+.whatsapp-float i {
+    color: #fff;
+    font-size: 30px;
+}
+/* ==========================================================================
+   BOUTON WHATSAPP FLOTTANT
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Le fond vert */
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-strong);
+    z-index: 9999; /* Force le bouton à rester au-dessus de tout */
+    text-decoration: none;
+    transition: var(--transition);
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe57;
+    animation: none;
+}
+
+.whatsapp-float i {
+    color: #fff;
+    font-size: 35px; /* Taille de l'icône FontAwesome */
+}
+
+/* Animation de pulsation */
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Réduction sur mobile */
+@media (max-width: 768px) {
+    .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+    .whatsapp-float i { font-size: 28px; }
+}/* ==========================================================================
+   RÉSEAUX SOCIAUX (FOOTER)
+   ========================================================================== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    width: 45px;
+    height: 45px;
+    line-height: 45px; /* Centre l'icône verticalement */
+    border-radius: 50%; /* Rend le fond rond */
+}
+
+.social-links a:hover {
+    color: var(--color-dark);
+    background-color: var(--color-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(243, 146, 0, 0.4);
+}/* ==========================================================================
+   CARTES PREMIUM (ACCUEIL)
+   ========================================================================== */
+.premium-card {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 2.5rem; /* Gros arrondi élégant */
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid #f3f4f6;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Design spécifique pour le Best-Seller (Potion Magique) */
+.premium-card.best-seller {
+    border: 2px solid var(--color-gold);
+    transform: scale(1.05); /* Légèrement plus grande pour la mettre en valeur */
+    z-index: 2;
+}
+
+.premium-card.best-seller:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.badge-best-seller {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-gold);
+    color: var(--color-white);
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(243, 146, 0, 0.3);
+    z-index: 10;
+}
+
+.premium-card h3 {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.premium-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.premium-card .img-wrapper {
+    border-radius: 1.5rem;
+}
+.product-container {
+    display: flex;          /* Active le mode Flexbox */
+    justify-content: center; /* Centre les produits horizontalement */
+    gap: 20px;              /* Ajoute un espace entre les deux produits */
+    flex-wrap: nowrap;      /* Force les produits à rester sur une seule ligne */
+    padding: 20px;
+}
+
+.product-card {
+    width: 45%;             /* Ajuste la largeur pour qu'ils tiennent à deux */
+    max-width: 300px;       /* Pour éviter qu'ils ne deviennent trop grands */
+    position: relative;     /* Important pour ton badge Best Seller */
+}

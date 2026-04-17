@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function getWhatsAppLink(productName, productPrice) {
             const message = `Bonjour Wilau Bio, je souhaite commander le produit : ${productName} à ${productPrice} FCFA.`;
-            return `https://wa.me/237697655431?text=${encodeURIComponent(message)}`;
+            return `https://wa.me/699430350?text=${encodeURIComponent(message)}`;
         }
 
         function displayProducts(category = "all", reset = true) {
