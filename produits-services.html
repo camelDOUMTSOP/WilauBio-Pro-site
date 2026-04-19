@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits & Services | Wilau Bio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="assets/logos/logo wilau.jpg" alt="Logo WiLAU BIO" style="height: 48px; width: auto; object-fit: contain;">
+                <div class="logo-text">
+                    <span class="logo-title">WiLAU BIO</span>
+                    <span class="logo-subtitle">Cosmétique</span>
+                </div>
+            </a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits-services.html" class="active">Produits & Services</a></li>
+                    <li><a href="a-propos-contact.html">À propos & Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner reveal" style="background-color: var(--color-dark); min-height: 30vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px;">
+        <div class="container center text-light">
+            <h1 style="margin-bottom: 0.5rem;">Produits & Services</h1>
+            <p class="accent-font gold-text" style="font-size: 1.2rem;">L'Excellence pour votre Peau</p>
+        </div>
+    </section>
+
+    <section class="products-catalog bg-cream section-padding">
+        <div class="container">
+            <div class="section-header center">
+                <span class="accent-font gold-text">La Boutique</span>
+                <h2>Notre Gamme Cosmétique</h2>
+                <p>Trouvez le soin parfait pour sublimer votre beauté naturelle.</p>
+            </div>
+
+            <div class="filters center mt-2" id="product-filters">
+                <button class="filter-btn active" data-filter="all">Tout voir</button>
+                <button class="filter-btn" data-filter="visage">Visage</button>
+                <button class="filter-btn" data-filter="corps">Corps</button>
+                <button class="filter-btn" data-filter="serum">Sérums & Huiles</button>
+                <button class="filter-btn" data-filter="pack">Packs</button>
+            </div>
+
+            <div class="grid-4 mt-3" id="products-grid"></div>
+            
+            <div class="center mt-3">
+                <button id="load-more-btn" class="btn btn-primary" style="display: none;">Voir plus de produits</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="services-block bg-dark text-light section-padding reveal" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container center">
+            <div class="text-content" style="max-width: 800px; margin: 0 auto;">
+                <span class="accent-font gold-text">En Cabinet</span>
+                <h2>Nos Prestations Esthétiques</h2>
+                <p>Au-delà de nos produits, découvrez notre expertise en direct. Nous proposons des soins sur-mesure adaptés à vos besoins.</p>
+                
+                <ul class="services-list mt-3" style="list-style: none; text-align: left; display: flex; flex-direction: column; gap: 1.5rem; padding: 0;">
+                    
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12 2.1 14.9"/><path d="M12 12 21.9 9.1"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Soin du visage purifiant</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Nettoyage en profondeur, gommage et hydratation pour un teint lumineux.</p>
+                        </div>
+                    </li>
+
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="M2 14c0 2 2 3 5 3s5-1 5-3-2-3-5-3-5 1-5 3Z"/><path d="M12 14c0 2 2 3 5 3s5-1 5-3-2-3-5-3-5 1-5 3Z"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Massage relaxant</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Détente musculaire profonde aux huiles essentielles naturelles.</p>
+                        </div>
+                    </li>
+
+                    <li style="display: flex; align-items: flex-start; gap: 15px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                        <div style="flex-shrink: 0; color: var(--color-gold);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15h6"/><path d="M9 11h6"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-heading);">Diagnostic de peau</strong> 
+                            <p style="margin: 5px 0 0 0; color: #d1d5db;">Bilan personnalisé complet pour déterminer votre routine cosmétique idéale.</p>
+                        </div>
+                    </li>
+
+                </ul>
+                <a href="https://wa.me/237699430350" target="_blank" class="btn btn-primary gold-btn mt-3">Prendre Rendez-vous</a>
+            </div>
+        </div>
+    </section>
+
+   <footer class="footer-pro">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <h2 class="gold-text" style="font-family: var(--font-heading); margin-bottom: 1rem;">WiLAU BIO</h2>
+                    <p>L'excellence cosmétique pour sublimer la peau africaine. Des formules naturelles, saines et authentiques.</p>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col links-col">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="produits-services.html">La Boutique</a></li>
+                        <li><a href="a-propos-contact.html">Notre Histoire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt gold-text"></i> Douala, Cameroun</li>
+                        <li><i class="fab fa-whatsapp gold-text"></i> +237 699 430 350</li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Recevez nos astuces beauté.</p>
+                    <form class="newsletter-form" action="#">
+                        <input type="email" placeholder="Votre e-mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 WiLAU BIO. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/237699430350" class="whatsapp-float" target="_blank" aria-label="Contacter sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script src="js/main.js"></script>
+</body>
+</html>
